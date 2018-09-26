@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HelloWorldAngular6';
+
+  imageUrl = "https://angular.io/generated/images/guide/architecture/databinding.png";
+  imageAlt = "Property binding";
+
+
+  onButtonClick() {
+    alert('Er werd op deze knop gedrukt!');
+  }
 }
