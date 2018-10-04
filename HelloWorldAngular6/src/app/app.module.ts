@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
+import { MenuComponent } from './menu/menu.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     ContactComponent,
-    HelpComponent
+    HelpComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
