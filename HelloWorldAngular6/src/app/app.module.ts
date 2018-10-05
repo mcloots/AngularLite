@@ -13,6 +13,8 @@ import { ContactModule } from './contact/contact.module';
 import { HelpModule } from './help/help.module';
 import { AppRoutingModule } from './app-routing.module';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    SharedModule,
     HomeModule,
     HelpModule
   ],
