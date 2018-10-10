@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactRoutingModule } from './contact-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   { path: "", component: ContactComponent},
@@ -11,7 +11,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, ContactRoutingModule
+    SharedModule,
+    ContactRoutingModule
   ],
   declarations: [ContactComponent]
 })
