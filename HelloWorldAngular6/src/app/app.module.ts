@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
 import { MenuComponent } from './menu/menu.component';
+import { HomeModule } from './home/home.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,14 +19,14 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ContactComponent,
     HelpComponent,
     MenuComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: true}),
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
