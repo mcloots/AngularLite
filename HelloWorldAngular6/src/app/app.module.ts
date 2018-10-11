@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FilmModule } from './film/film.module';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     HomeModule,
-    HelpModule
+    HelpModule,
+    HttpClientModule,
+    FilmModule
   ],
   providers: [],
   bootstrap: [AppComponent]
