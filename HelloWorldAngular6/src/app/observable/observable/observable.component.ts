@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { map, filter, catchError } from 'rxjs/operators';
 
 
 @Component({
@@ -41,6 +41,16 @@ export class ObservableComponent implements OnInit, OnDestroy {
       filter(n => n % 2 !== 0)
     ).subscribe(x => console.log(x));
 
+  errorHandling$ = of(1,2,3,4,5)
+    .pipe(
+      map(test => {
+        if(test === 5) { throw new Error('5 geeft een fout!');}
+        return test;
+      })
+    ).subscribe(
+      result => console.log(result),
+      err => console.log('Error: ' + err)
+    );
   constructor() {
 
   }
