@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FilmComponent implements OnInit {
   filmNaam: string;
-  response: any;
+  response;
 
   constructor(private _http: HttpClient) { }
 
@@ -16,13 +16,10 @@ export class FilmComponent implements OnInit {
   }
 
   zoekFilm() {
-    //API aanroepen
-    this._http.get("http://www.omdbapi.com/?t=" + this.filmNaam + "&apikey=48cc3813")
-      .subscribe(
-        (res) => {
-          this.response = res;
-        }
-      );
+    this._http.get("http://www.omdbapi.com/?t="
+      + this.filmNaam +
+      "&apikey=48cc3813").subscribe(res => {
+        this.response = res;
+      });
   }
-
 }
