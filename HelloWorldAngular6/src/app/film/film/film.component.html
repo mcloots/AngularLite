@@ -4,3 +4,5 @@
   <p>{{filmNaam}}</p>
   <button mat-raised-button color="primary" (click)="zoekFilm()">Film zoeken</button>
   <p>{{response | json}}</p>
+  <h3 *ngIf="filmModel">Gemapt naar filmmodel</h3>
+  <p>{{filmModel | json}}</p>
