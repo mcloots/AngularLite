@@ -4,3 +4,24 @@
 <p>
   {{postResponse | json}}
 </p>
+
+<p>
+  <button (click)="testPut()">Test Put</button>
+</p>
+<p>
+  {{putResponse | json}}
+</p>
+
+<p>
+  <button (click)="testPatch()">Test Patch</button>
+</p>
+<p>
+  {{patchResponse | json}}
+</p>
+
+<p>
+  <button (click)="testDelete()">Test Delete</button>
+</p>
+<p>
+  {{deleteResponse | json}}
+</p>
