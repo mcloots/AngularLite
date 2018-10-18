@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PostModel } from './models/post.model';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact',
@@ -8,6 +9,7 @@ import { PostModel } from './models/post.model';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  getResponse;
   postResponse;
   putResponse;
   patchResponse;
@@ -16,6 +18,19 @@ export class ContactComponent implements OnInit {
   constructor(private _http: HttpClient) { }
 
   ngOnInit() {
+  }
+
+  testGet() {
+    this._http.get(
+      "https://jsonplaceholder.typicode.com/posts"
+    ).pipe(
+      map((data: any) => {
+        return data.slice(0, 5)
+      })
+    )
+      .subscribe(response =>
+        this.getResponse = response
+      );
   }
 
   testPost() {
