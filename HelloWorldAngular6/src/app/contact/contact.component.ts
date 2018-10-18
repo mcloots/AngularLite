@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
       "https://jsonplaceholder.typicode.com/posts"
     ).pipe(
       map((data: any) => {
-        return data.slice(0, 5)
+        return data.slice(0, 5);
       })
     )
       .subscribe(response =>
