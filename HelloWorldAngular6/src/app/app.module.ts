@@ -18,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FilmModule } from './film/film.module';
 import { ObservableModule } from './observable/observable.module';
+import { RxFormsModule } from './rx-forms/rx-forms.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ObservableModule } from './observable/observable.module';
     HelpModule,
     HttpClientModule,
     FilmModule,
-    ObservableModule
+    ObservableModule,
+    RxFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

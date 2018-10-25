@@ -1,0 +1,18 @@
+<h1>Student formulier (RX)</h1>
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Voornaam" formControlName="voornaam">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Naam" formControlName="naam">
+    </mat-form-field>
+  </p>
+
+  <p><button mat-raised-button color="primary" type="submit" [disabled]="!studentForm.valid">
+      Submit
+    </button></p>
+</form>
+
