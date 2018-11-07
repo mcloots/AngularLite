@@ -1,0 +1,28 @@
+<h2>Mijn teams</h2>
+
+<table>
+  <tr *ngFor="let t of teams | async; let i = index" [attr.data-index]="i">
+    <td>{{i + 1}}</td>
+    <td>{{t.id}}</td>
+    <td>{{t.naam}}</td>
+    <td>{{t.land}}</td>
+    <td>
+      <button mat-raised-button color="primary" (click)="edit(t)">
+        Edit
+      </button>
+    </td>
+    <td>
+      <button mat-raised-button color="warn" (click)="delete(t)">
+        Delete
+      </button>
+    </td>
+  </tr>
+</table>
+
+<form #f="ngForm">
+  <input [(ngModel)]="team.naam" name="naam" type="text" placeholder="mijn team" required>
+  <input [(ngModel)]="team.land" name="land" type="text" placeholder="land" required>
+  <button mat-raised-button color="primary" [disabled]="!f.valid" (click)="save()">
+    Save
+  </button>
+</form>

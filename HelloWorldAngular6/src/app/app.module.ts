@@ -19,6 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilmModule } from './film/film.module';
 import { ObservableModule } from './observable/observable.module';
 import { RxFormsModule } from './rx-forms/rx-forms.module';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { FirebaseTestModule } from './firebase-test/firebase-test.module';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -36,7 +40,10 @@ import { RxFormsModule } from './rx-forms/rx-forms.module';
     HttpClientModule,
     FilmModule,
     ObservableModule,
-    RxFormsModule
+    RxFormsModule,
+    FirebaseTestModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
