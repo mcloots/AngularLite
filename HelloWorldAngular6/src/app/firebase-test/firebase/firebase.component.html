@@ -3,7 +3,6 @@
 <table>
   <tr *ngFor="let t of teams | async; let i = index" [attr.data-index]="i">
     <td>{{i + 1}}</td>
-    <td>{{t.id}}</td>
     <td>{{t.naam}}</td>
     <td>{{t.land}}</td>
     <td>
