@@ -17,12 +17,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FilmModule } from './film/film.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 import { ObservableModule } from './observable/observable.module';
 import { RxFormsModule } from './rx-forms/rx-forms.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { FirebaseTestModule } from './firebase-test/firebase-test.module';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthService } from './authentication/services/auth.service';
 
 
 @NgModule({
@@ -39,13 +42,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     HelpModule,
     HttpClientModule,
     FilmModule,
+    AuthenticationModule,
     ObservableModule,
     RxFormsModule,
     FirebaseTestModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

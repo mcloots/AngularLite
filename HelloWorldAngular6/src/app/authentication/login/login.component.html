@@ -1,0 +1,4 @@
+<h1>Inloggen</h1>
+<p><button (click)="loginFacebook()">Inloggen met Facebook</button></p>
+<p><button (click)="logout()">Uitloggen</button></p>
+<p>{{(_authService.user | async) | json}}</p>
